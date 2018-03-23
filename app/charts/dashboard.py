@@ -46,29 +46,29 @@ def create_charts():
     performance.add("Overall", dates, overall,
                     mark_point=["max", "min"], mark_line=["average"], is_datazoom_show=True,
                     datazoom_type='both',
-                    datazoom_range=[10, 50])
+                    datazoom_range=[0, 100])
     performance.add("Self", dates, self_record,
                     mark_point=["max", "min"], mark_line=["average"], is_datazoom_show=True,
                     datazoom_type='both',
-                    datazoom_range=[10, 50], legend_pos="40%")
+                    datazoom_range=[0, 100], legend_pos="40%")
     performance.add("Mirror", dates, mirror_record,
                     mark_point=["max", "min"], mark_line=["average"], is_datazoom_show=True,
                     datazoom_type='both',
-                    datazoom_range=[10, 50], legend_pos="40%")
+                    datazoom_range=[0, 100], legend_pos="40%")
     page.add(performance)
 
     portfolio = Pie("Portfolio Summary", **style.init_style)
-    sectors = ['Technology', 'Industrials', 'Financials', 'Consumer Cyclicals', 'Communications', 'Unclassified']
-    self_placement = [7604, 4649, 8745, 5905, 6592, 7181]
-    mirror_placement = [9521, 4902, 1065, 5416, 5150, 6042]
-    over_placement = [17125, 9551, 9810, 11321, 11742, 13223]
+    sectors = ['Technology', 'Energy', 'Consumer Cyclical', 'Non-Consumer Cyclical', 'Unclassified']
+    self_placement = [10000, 20000, 20000, 5000, 2000]
+    mirror_placement = [4000, 2000, 1000, 1000, 2000]
+    over_placement = [self_placement[i] + mirror_placement[i] for i in range(len(self_placement))]
 
     portfolio.add("Self", sectors, self_placement,
                   radius=[10, 30], center=[75, 50], is_random=True, rosetype='radius', legend_pos="25%")
     portfolio.add("Mirror", sectors, mirror_placement,
-                  radius=[40, 70], center=[75, 50], is_random=True, rosetype='radius')
+                  radius=[40, 60], center=[75, 50], is_random=True, rosetype='radius')
     portfolio.add("Overall", sectors, over_placement,
-                  radius=[0, 70], center=[25, 50], is_random=True, rosetype='radius', is_label_show=True)
+                  radius=[10, 60], center=[25, 50], is_random=True, rosetype='radius', is_label_show=True)
 
     page.add(portfolio)
     return page
