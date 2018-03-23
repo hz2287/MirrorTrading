@@ -64,11 +64,11 @@ def create_charts():
     over_placement = [17125, 9551, 9810, 11321, 11742, 13223]
 
     portfolio.add("Self", sectors, self_placement,
-                  radius=[10, 30], center=[75, 50], is_random=True, rosetype='radius')
+                  radius=[10, 30], center=[75, 50], is_random=True, rosetype='radius', legend_pos="25%")
     portfolio.add("Mirror", sectors, mirror_placement,
                   radius=[40, 70], center=[75, 50], is_random=True, rosetype='radius')
     portfolio.add("Overall", sectors, over_placement,
-                  radius=[0, 70], center=[30, 50], is_random=True, rosetype='radius', is_label_show=True)
+                  radius=[0, 70], center=[25, 50], is_random=True, rosetype='radius', is_label_show=True)
 
     page.add(portfolio)
     return page

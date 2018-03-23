@@ -25,11 +25,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a class="navbar-brand" href="/">Home</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/">About us</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/aboutus">About us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Jackie <b
@@ -65,10 +68,10 @@
                         <h4 class="modal-title">Search Result</h4>
                     </div>
                     <div class="modal-body">
+                        <h4>
+                            <button type="button" class="btn btn-danger">Trending <span class="badge">2</span></button>
+                        </h4>
                         <table class="table">
-                            <p class="text-danger">
-                                <caption>Trending</caption>
-                            </p>
                             <thead>
                             <tr>
                                 <th>Name</th>
@@ -79,7 +82,7 @@
                             </thead>
                             <tbody>
                             <tr class="info">
-                                <td><img src="../static/images/WarrenBuffett.png" class="img-rounded">Warren Buffett
+                                <td><img src="../static/images/WarrenBuffett.png" class="img-rounded"> Warren Buffett
                                 </td>
                                 <td>Technology<br>Communication</td>
                                 <td>
@@ -88,7 +91,7 @@
                                 <td>121,221</td>
                             </tr>
                             <tr class="primary">
-                                <td><img src="../static/images/MichaelBurry.png" class="img-rounded">Michael Burry</td>
+                                <td><img src="../static/images/MichaelBurry.jpeg" class="img-rounded"> Michael Burry</td>
                                 <td>Bio-tech<br>Industrial</td>
                                 <td>
                                     <p class="text-primary">+19.21%</p>
@@ -98,7 +101,7 @@
                             </tbody>
                         </table>
                         <h4>
-                            <h4><button type="button" class="btn btn-primary">User <span class="badge">1</span></button></h4>
+                            <button type="button" class="btn btn-primary">User <span class="badge">1</span></button>
                         </h4>
                         <table class="table">
                             <thead>
@@ -106,16 +109,18 @@
                                 <th>Name</th>
                                 <th>Portfolio Overview</th>
                                 <th>Performance</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr class="bg-success">
-                                <td><img src="../static/images/aaronlu.jpg" class="img-rounded">Aaron Lu
+                                <td><img src="../static/images/aaronlu.jpg" class="img-rounded"> Aaron Lu
                                 </td>
                                 <td>Technology<br>Communication</td>
                                 <td>
                                     <p class="text-success">+30.45%</p>
                                 </td>
+                                <td><a href="/dashboard" class="btn btn-info" role="button">Mirror It!</a></td>
                             </tr>
                             </tbody>
                         </table>
@@ -124,7 +129,6 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-
             </div>
         </div>
 
