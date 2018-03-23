@@ -18,7 +18,14 @@ def bar():
                            source_file='bar',
                            myechart=_bar.render_embed(),
                            script_list=_bar.get_js_dependencies())
-
+@app.route('/dashboard')
+def dashboard():
+    _dashboard = charts.dashboard.create_charts()
+    return render_template('base.html',
+                           title='Timeline类',
+                           source_file='timeline',
+                           myechart=_dashboard.render_embed(),
+                           script_list=_dashboard.get_js_dependencies())
 
 @app.route('/bar3d')
 def bar3d():

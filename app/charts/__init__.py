@@ -31,3 +31,4 @@ from . import wordcloud
 from . import grid
 from . import overlap
 from . import timeline
+from . import dashboard

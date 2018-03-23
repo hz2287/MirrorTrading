@@ -1,7 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="error">
-        <h1>网页走丢啦</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset=utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/github-markdown.css')}}" type="text/css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+    <div class="markdown-body ">
+        <h1>Opps! You have entered a barren land of development.</h1>
     </div>
 {% endblock %}

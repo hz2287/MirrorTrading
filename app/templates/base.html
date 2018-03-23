@@ -1,10 +1,10 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}pyecharts - {{ title }}{% endblock %}
+{% block title %}Mirror Trading{% endblock %}
 
 {% block head %}
     {{super()}}
-    <link rel="icon" href="{{ url_for('static', filename='images/fav.ico')}}" type="image/x-coin">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.ico')}}" type="image/x-coin">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" type="text/css">
     <title>Proudly presented by ECharts</title>
 	{% for jsfile_name in script_list %}
@@ -22,10 +22,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">pyecharts</a>
+                <a class="navbar-brand" href="/">About Us</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a> </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">直角坐标系
                             <ul class="dropdown-menu">
@@ -97,20 +98,20 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-      <button class="btn-info" onclick="onEditButtonClick()"><span class="glyphicon glyphicon-pencil"></span>Edit</button> in browsers
-          <script>
-            function onEditButtonClick(){
-                window.location.href="https://pyecharts.github.io/pyecharts.js-app/#https://raw.githubusercontent.com/pyecharts/pyecharts-app/master/app/charts/{{source_file}}.py";
-            }
-          </script>
-    </div>
+{#    <div class="container">#}
+{#      <button class="btn-info" onclick="onEditButtonClick()"><span class="glyphicon glyphicon-pencil"></span>Edit</button> in browsers#}
+{#          <script>#}
+{#            function onEditButtonClick(){#}
+{#                window.location.href="https://pyecharts.github.io/pyecharts.js-app/#https://raw.githubusercontent.com/pyecharts/pyecharts-app/master/app/charts/{{source_file}}.py";#}
+{#            }#}
+{#          </script>#}
+{#    </div>#}
     <div class="my-charts">
         {{ myechart|safe }}
     </div>
     <footer class="container-fluid foot-wrap">
         <p align="center" style="margin-top: 20px;color:#878B91;">
-            Copyright &copy; 2017 chenjiandongx
+            Copyright &copy; 2018 Team Mirror Trading
         </p>
     </footer>
 {% endblock %}
