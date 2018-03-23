@@ -3,115 +3,182 @@
 {% block title %}Mirror Trading{% endblock %}
 
 {% block head %}
-    {{super()}}
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.ico')}}" type="image/x-coin">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" type="text/css">
-    <title>Proudly presented by ECharts</title>
-	{% for jsfile_name in script_list %}
-        <script src="static/echarts/{{ jsfile_name }}.js"></script>
-    {% endfor %}
+{{ super() }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="icon" href="{{ url_for('static', filename='images/logo.ico') }}" type="image/x-coin">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
+<title>Proudly presented by Mirror Trading</title>
+{% for jsfile_name in script_list %}
+<script src="static/echarts/{{ jsfile_name }}.js"></script>
+{% endfor %}
 {% endblock %}
 
 {% block navbar %}
-    <div class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">About Us</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a> </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">直角坐标系
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ url_for('bar') }}">柱状图</a> </li>
-                                <li><a href="{{ url_for('boxplot') }}">箱线图</a> </li>
-                                <li><a href="{{ url_for('line') }}">折线图</a> </li>
-                                <li><a href="{{ url_for('kline') }}">K 线图</a> </li>
-                                <li><a href="{{ url_for('scatter') }}">散点图</a> </li>
-                                <li><a href="{{ url_for('effectscatter') }}">动态散点图</a> </li>
-                                <li><a href="{{ url_for('heatmap') }}">热力图</a> </li>
-                                <li><a href="{{ url_for('sankey') }}">桑基图</a> </li>
-                                <li><a href="{{ url_for('themeriver') }}">主题河流图</a> </li>
-                            </ul>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">其他坐标系
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ url_for('polar') }}">极坐标系</a> </li>
-                                <li><a href="{{ url_for('parallel') }}">平行坐标系</a> </li>
-                            </ul>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">3D图
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ url_for('bar3d') }}">3D 柱状图</a> </li>
-                                <li><a href="{{ url_for('scatter3d') }}">3D 散点图</a> </li>
-                                <li><a href="{{ url_for('line3d') }}">3D 折线图</a> </li>
-                            </ul>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">地图
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ url_for('geo') }}">地理坐标系</a> </li>
-                                <li><a href="{{ url_for('geolines') }}">地理坐标系线图</a> </li>
-                                <li><a href="{{ url_for('map') }}">地图</a> </li>
-                            </ul>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">其他
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ url_for('pie') }}">饼图</a> </li>
-                                <li><a href="{{ url_for('treemap') }}">树图</a> </li>
-                                <li><a href="{{ url_for('graph') }}">关系图</a> </li>
-                                <li><a href="{{ url_for('funnel') }}">漏斗图</a> </li>
-                                <li><a href="{{ url_for('gauge') }}">仪表盘</a> </li>
-                                <li><a href="{{ url_for('radar') }}">雷达图</a> </li>
-                                <li><a href="{{ url_for('liquid') }}">水球图</a> </li>
-                                <li><a href="{{ url_for('wordcloud') }}">词云图</a> </li>
-                            </ul>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户自定义
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ url_for('grid') }}">Grid 类</a> </li>
-                                <li><a href="{{ url_for('overlap') }}">Overlap 类</a> </li>
-                                <li><a href="{{ url_for('timeline') }}">Timeline 类</a> </li>
-                            </ul>
-                        </a>
-                    </li>
-                </ul>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('dashboard') }}">Dashboard</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">About us</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Jackie <b
+                        class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="icon-cog"></i> Preferences</a></li>
+                        <li><a href="#"><i class="icon-envelope"></i> Contact Support</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="icon-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group input-group">
+                    <input type="text" class="form-control" placeholder="Search..">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal"></span>
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Result</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <p class="text-danger">
+                                <caption>Trending</caption>
+                            </p>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Interests</th>
+                                <th>Overall Yield</th>
+                                <th>Followers</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="info">
+                                <td><img src="../static/images/WarrenBuffett.png" class="img-rounded">Warren Buffett
+                                </td>
+                                <td>Technology<br>Communication</td>
+                                <td>
+                                    <p class="text-success">+30.45%</p>
+                                </td>
+                                <td>121,221</td>
+                            </tr>
+                            <tr class="primary">
+                                <td><img src="../static/images/MichaelBurry.png" class="img-rounded">Michael Burry</td>
+                                <td>Bio-tech<br>Industrial</td>
+                                <td>
+                                    <p class="text-primary">+19.21%</p>
+                                </td>
+                                <td>99,332</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>
+                            <h4><button type="button" class="btn btn-primary">User <span class="badge">1</span></button></h4>
+                        </h4>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Portfolio Overview</th>
+                                <th>Performance</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="bg-success">
+                                <td><img src="../static/images/aaronlu.jpg" class="img-rounded">Aaron Lu
+                                </td>
+                                <td>Technology<br>Communication</td>
+                                <td>
+                                    <p class="text-success">+30.45%</p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
             </div>
         </div>
+
+
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-{#    <div class="container">#}
-{#      <button class="btn-info" onclick="onEditButtonClick()"><span class="glyphicon glyphicon-pencil"></span>Edit</button> in browsers#}
-{#          <script>#}
-{#            function onEditButtonClick(){#}
-{#                window.location.href="https://pyecharts.github.io/pyecharts.js-app/#https://raw.githubusercontent.com/pyecharts/pyecharts-app/master/app/charts/{{source_file}}.py";#}
-{#            }#}
-{#          </script>#}
-{#    </div>#}
-    <div class="my-charts">
-        {{ myechart|safe }}
-    </div>
-    <footer class="container-fluid foot-wrap">
-        <p align="center" style="margin-top: 20px;color:#878B91;">
-            Copyright &copy; 2018 Team Mirror Trading
-        </p>
-    </footer>
+
+<div class="my-charts">
+    {{ myechart|safe }}
+</div>
+<h2>My Portfolio</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Stock Name</th>
+        <th>Performance</th>
+        <th>Yield</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>FB</td>
+        <td><img src="../static/images/FB.png" class="img-rounded" alt="Cinque Terre"></td>
+        <td class="text-danger">-2.64%</td>
+    </tr>
+    <tr>
+        <td>GOOG</td>
+        <td><img src="../static/images/GOOG.png" class="img-rounded" alt="Cinque Terre"></td>
+        <td class="text-danger">-3.83%</td>
+    </tr>
+    <tr>
+        <td>EDIT</td>
+        <td><img src="../static/images/EDIT.png" class="img-rounded" alt="Cinque Terre"></td>
+        <td class="text-danger">-3.16%</td>
+    </tr>
+    <tr>
+        <td>TVIX</td>
+        <td><img src="../static/images/TVIX.png" class="img-rounded" alt="Cinque Terre"></td>
+        <td class="text-success">+24.93%</td>
+    </tr>
+    <tr>
+        <td>CRSP</td>
+        <td><img src="../static/images/CRSP.png" class="img-rounded" alt="Cinque Terre"></td>
+        <td class="text-danger">-0.12%</td>
+    </tr>
+    </tbody>
+</table>
+
+<footer class="container-fluid foot-wrap">
+    <p align="center" style="margin-top: 20px;color:#878B91;">
+        Copyright &copy; 2018 Team Mirror Trading
+    </p>
+</footer>
 {% endblock %}
