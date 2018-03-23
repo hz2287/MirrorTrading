@@ -4,11 +4,12 @@
 
 {% block head %}
 {{ super() }}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<link rel="icon" href="{{ url_for('static', filename='images/logo.ico') }}" type="image/x-coin">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
 <title>Proudly presented by Mirror Trading</title>
 {% for jsfile_name in script_list %}
 <script src="static/echarts/{{ jsfile_name }}.js"></script>
@@ -35,7 +36,7 @@
                 <li><a href="/aboutus">About us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Jackie <b
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Evan<b
                         class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#"><i class="icon-cog"></i> Preferences</a></li>
@@ -59,7 +60,7 @@
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
 
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -116,11 +117,17 @@
                             <tr class="bg-success">
                                 <td><img src="../static/images/aaronlu.jpg" class="img-rounded"> Aaron Lu
                                 </td>
-                                <td>Technology<br>Communication</td>
+                                <td>Technology (40%)<br>Energy (20%)<br>Consumer Cyclical (10%)<br>Non-Consumer Cyclical (10%)<br>Unclassified (20%)</td>
                                 <td>
-                                    <p class="text-success">+30.45%</p>
+                                    <p class="text-success">+25.54%</p>
                                 </td>
-                                <td><a href="/dashboard" class="btn btn-info" role="button">Mirror It!</a></td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="amount" id="amount" class="form-control" required>
+                                        <label class="form-control-placeholder" for="amount">Amount</label>
+                                    </div>
+                                    <a href="/dashboard" class="btn btn-info" role="button">Mirror It!</a>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -176,6 +183,26 @@
         <td>CRSP</td>
         <td><img src="../static/images/CRSP.png" class="img-rounded" alt="Cinque Terre"></td>
         <td class="text-danger">-0.12%</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Mirrored</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Portfolio Overview</th>
+        <th>Amount ($)</th>
+        <th>Average Yield</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Aaron Lu</td>
+        <td>Technology (40%)<br>Energy (20%)<br>Consumer Cyclical (10%)<br>Non-Consumer Cyclical (10%)<br>Unclassified (20%)</td>
+        <td>34,398</td>
+        <td class="text-success">+49.12%</td>
     </tr>
     </tbody>
 </table>
