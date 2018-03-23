@@ -1,5 +1,9 @@
-# pyecharts 体验网站
+# Mirror Trading
+This is the demo repo of Mirror Trading.
+## Narrative
+Mirror Trading is a social trading platform that aims to democratize money management by effectively connecting investors with capital and those with investment skills.
 
-本网站只是用于展示使用 pyecharts 生成的图的效果，网站是用 Flask+pyecharts 写的，并部署在 Heroku
-
-![image](https://user-images.githubusercontent.com/19553554/34214999-07cb1f6e-e5df-11e7-97c6-101aa969cce2.png)
+## How To Run It
+1. Install all the libraries in the `requirements .txt`.
+2. Use the command `python3 /path/to/manage.py` to run the demo.
+3. Open the browser and go to `http://127.0.0.1:5000/`. Enjoy!
