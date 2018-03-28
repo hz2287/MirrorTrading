@@ -13,7 +13,7 @@
 
 .form-control:focus + .form-control-placeholder,
 .form-control:valid + .form-control-placeholder {
-  font-size: 75%;
-  transform: translate3d(0, -100%, 0);
+  font-size: 50%;
+  transform: translate3d(0, -75%, 0);
   opacity: 1;
 }

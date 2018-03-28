@@ -56,10 +56,11 @@
                     <div class="form-group input-group">
                         <input type="text" class="form-control" placeholder="Search..">
                         <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <span class="glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal"></span>
-                        </button>
-                    </span>
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search" data-toggle="modal"
+                                      data-target="#myModal"></span>
+                            </button>
+                        </span>
                     </div>
                 </form>
             </div>
@@ -92,7 +93,8 @@
                                 <tbody>
                                 <tr class="info">
                                     <td>
-                                        <img src="https://www.biography.com/.image/t_share/MTE5NTU2MzE2MTY4Njg1MDY3/warren-buffett-9230729-1-402.jpg" class="img-rounded" width="30">
+                                        <img src="https://www.biography.com/.image/t_share/MTE5NTU2MzE2MTY4Njg1MDY3/warren-buffett-9230729-1-402.jpg"
+                                             class="img-rounded" width="30">
                                         Warren Buffett
                                     </td>
                                     <td>Technology
@@ -105,7 +107,8 @@
                                 </tr>
                                 <tr class="primary">
                                     <td>
-                                        <img src="https://qph.fs.quoracdn.net/main-thumb-t-8531-200-sudwjnvxukryltwiyzuabtiakdunmdvg.jpeg" class="img-rounded" width="30"> Michael Burry
+                                        <img src="https://qph.fs.quoracdn.net/main-thumb-t-8531-200-sudwjnvxukryltwiyzuabtiakdunmdvg.jpeg"
+                                             class="img-rounded" width="30"> Michael Burry
                                     </td>
                                     <td>Bio-tech
                                         <br>Industrial
@@ -146,11 +149,13 @@
                                         <p class="text-success">+25.54%</p>
                                     </td>
                                     <td>
-                                        <div class="form-group">
-                                            <input type="amount" id="amount" class="form-control" required>
-                                            <label class="form-control-placeholder" for="amount">Amount</label>
-                                        </div>
-                                        <a href="/dashboard" class="btn btn-info" role="button">Mirror It!</a>
+                                        <form action="/dashboard">
+                                            <div class="form-group">
+                                                <input type="number" id="amount" class="form-control" required>
+                                                <label class="form-control-placeholder" for="amount">Amount</label>
+                                                <button type="submit" class="btn btn-info">Mirror It!</button>
+                                            </div>
+                                        </form>
                                     </td>
                                 </tr>
                                 </tbody>
