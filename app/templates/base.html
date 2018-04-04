@@ -161,83 +161,83 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container">
+        <div class="my-charts">
+            {{ myechart|safe }}
+        </div>
+        <h2>My Portfolio</h2>
 
-    <div class="my-charts">
-        {{ myechart|safe }}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Stock Name</th>
+                <th>Performance</th>
+                <th>Yield</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>FB</td>
+                <td>
+                    <img src="../static/images/FB.png" class="img-rounded" alt="Cinque Terre">
+                </td>
+                <td class="text-danger">-2.64%</td>
+            </tr>
+            <tr>
+                <td>GOOG</td>
+                <td>
+                    <img src="../static/images/GOOG.png" class="img-rounded" alt="Cinque Terre">
+                </td>
+                <td class="text-danger">-3.83%</td>
+            </tr>
+            <tr>
+                <td>EDIT</td>
+                <td>
+                    <img src="../static/images/EDIT.png" class="img-rounded" alt="Cinque Terre">
+                </td>
+                <td class="text-danger">-3.16%</td>
+            </tr>
+            <tr>
+                <td>TVIX</td>
+                <td>
+                    <img src="../static/images/TVIX.png" class="img-rounded" alt="Cinque Terre">
+                </td>
+                <td class="text-success">+24.93%</td>
+            </tr>
+            <tr>
+                <td>CRSP</td>
+                <td>
+                    <img src="../static/images/CRSP.png" class="img-rounded" alt="Cinque Terre">
+                </td>
+                <td class="text-danger">-0.12%</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2>Mirrored</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Portfolio Overview</th>
+                <th>Amount ($)</th>
+                <th>Average Yield</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Aaron Lu</td>
+                <td>Technology (40%)
+                    <br>Energy (20%)
+                    <br>Consumer Cyclical (10%)
+                    <br>Non-Consumer Cyclical (10%)
+                    <br>Unclassified (20%)
+                </td>
+                <td>14,912</td>
+                <td class="text-success">+49.12%</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    <h2>My Portfolio</h2>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Stock Name</th>
-            <th>Performance</th>
-            <th>Yield</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>FB</td>
-            <td>
-                <img src="../static/images/FB.png" class="img-rounded" alt="Cinque Terre">
-            </td>
-            <td class="text-danger">-2.64%</td>
-        </tr>
-        <tr>
-            <td>GOOG</td>
-            <td>
-                <img src="../static/images/GOOG.png" class="img-rounded" alt="Cinque Terre">
-            </td>
-            <td class="text-danger">-3.83%</td>
-        </tr>
-        <tr>
-            <td>EDIT</td>
-            <td>
-                <img src="../static/images/EDIT.png" class="img-rounded" alt="Cinque Terre">
-            </td>
-            <td class="text-danger">-3.16%</td>
-        </tr>
-        <tr>
-            <td>TVIX</td>
-            <td>
-                <img src="../static/images/TVIX.png" class="img-rounded" alt="Cinque Terre">
-            </td>
-            <td class="text-success">+24.93%</td>
-        </tr>
-        <tr>
-            <td>CRSP</td>
-            <td>
-                <img src="../static/images/CRSP.png" class="img-rounded" alt="Cinque Terre">
-            </td>
-            <td class="text-danger">-0.12%</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <h2>Mirrored</h2>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Portfolio Overview</th>
-            <th>Amount ($)</th>
-            <th>Average Yield</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Aaron Lu</td>
-            <td>Technology (40%)
-                <br>Energy (20%)
-                <br>Consumer Cyclical (10%)
-                <br>Non-Consumer Cyclical (10%)
-                <br>Unclassified (20%)
-            </td>
-            <td>14,912</td>
-            <td class="text-success">+49.12%</td>
-        </tr>
-        </tbody>
-    </table>
-
     <footer class="container-fluid foot-wrap">
         <p align="center" style="margin-top: 20px;color:#878B91;">
             Copyright &copy; 2018 Team Mirror Trading
