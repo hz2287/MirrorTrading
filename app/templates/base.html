@@ -1,34 +1,29 @@
 {% extends "bootstrap/base.html" %} {% block title %}Mirror Trading{% endblock %} {% block head %} {{ super() }}
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <link rel="stylesheet" href="http://www.csszengarden.com/215/215.css?v=8may2013" type="text/css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     {% for jsfile_name in script_list %}
-        <script src="static/echarts/{{ jsfile_name }}.js"></script> {% endfor %} {% endblock %} {% block navbar %}
+        <script src="static/echarts/{{ jsfile_name }}.js"></script> {% endfor %} {% endblock %}
+
+{% block navbar %}
     <div class="navbar navbar-inverse" role="navigation">
         <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Home</a>
+                <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/dashboard">Dashboard</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/aboutus">About us</a>
-                    </li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/aboutus">About us</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -37,17 +32,14 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">
-                                    <i class="icon-cog"></i> Preferences</a>
+                                <a href="#"><span class="glyphicon glyphicon-cog"></span> Preferences</a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="icon-envelope"></i> Contact Support</a>
+                                <a href="#"><span class="glyphicon glyphicon-earphone"></span> Contact Support</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">
-                                    <i class="icon-off"></i> Logout</a>
+                                <a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a>
                             </li>
                         </ul>
                     </li>
@@ -59,9 +51,8 @@
                             <button class="btn btn-default" type="button">
                                 <span class="glyphicon glyphicon-search" data-toggle="modal"
                                       data-target="#myModal"></span>
-          </button>
-
-          </span>
+                            </button>
+                        </span>
                     </div>
                 </form>
             </div>
@@ -94,8 +85,8 @@
                                 <tbody>
                                 <tr class="info">
                                     <td>
-                                        <img src="https://www.biography.com/.image/t_share/MTE5NTU2MzE2MTY4Njg1MDY3/warren-buffett-9230729-1-402.jpg"
-                                             class="img-rounded" width="30"> Warren Buffett
+                                        <img src="../static/images/WarrenBuffett.jpg"
+                                             class="img-rounded"> Warren Buffett
                                     </td>
                                     <td>Technology
                                         <br>Communication
@@ -107,8 +98,8 @@
                                 </tr>
                                 <tr class="primary">
                                     <td>
-                                        <img src="https://qph.fs.quoracdn.net/main-thumb-t-8531-200-sudwjnvxukryltwiyzuabtiakdunmdvg.jpeg"
-                                             class="img-rounded" width="30"> Michael Burry
+                                        <img src="../static/images/MichaelBurry.jpeg"
+                                             class="img-rounded"> Michael Burry
                                     </td>
                                     <td>Bio-tech
                                         <br>Industrial
@@ -137,7 +128,7 @@
                                 <tbody>
                                 <tr class="bg-success">
                                     <td>
-                                        <img src="../static/images/aaronlu.jpg" class="img-rounded" width="30"> Aaron Lu
+                                        <img src="../static/images/aaronlu.jpg" class="img-rounded"> Aaron Lu
                                     </td>
                                     <td>Technology (40%)
                                         <br>Energy (20%)
@@ -149,13 +140,11 @@
                                         <p class="text-success">+25.54%</p>
                                     </td>
                                     <td>
-                                        <form action="/dashboard">
-                                            <div class="form-group">
-                                                <input type="number" id="amount" class="form-control" required>
-                                                <label class="form-control-placeholder" for="amount">Amount</label>
-                                                <button type="submit" class="btn btn-info">Mirror It!</button>
-                                            </div>
-                                        </form>
+                                        <div class="form-group">
+                                            <input type="number" id="amount" class="form-control" required>
+                                            <label class="form-control-placeholder" for="amount">Amount</label>
+                                        </div>
+                                        <button type="submit" href="/dashboard" class="btn btn-info">Mirror It!</button>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -167,11 +156,11 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 
     <div class="my-charts">
         {{ myechart|safe }}
