@@ -17,51 +17,61 @@
         </div>
 
 
-        <!-- Container (About Section) -->
+        <!-- Container (About&Contact Section) -->
         <div id="about" class="container-fluid">
-            <div class="row">
-                <div class="col-sm-8">
-                    <h2>WHO ARE WE?</h2><br>
-                    <h4>We are a social trading platform that aims to democratize money management by effectively
-                        connecting
-                        investors with capital and those with investment skills.</h4><br>
-                    <br>
-                    <button class="btn btn-default btn-lg">Get in Touch</button>
-                </div>
-            </div>
-        </div>
+            <article class="markdown-body">
+                <h2>Who Are We?</h2>
+                <p>We are a social trading platform that aims to democratize money management by effectively
+                    connecting investors with capital and those with investment skills.</p>
+                <button class="btn btn-info btn-md">Get in Touch</button>
 
+                <h2>Contact</h2>
 
-        <!-- Container (Contact Section) -->
-        <div id="contact" class="container-fluid bg-grey">
-            <h2 class="text-center">CONTACT</h2>
-            <div class="row">
-                <div class="col-sm-5">
-                    <p>Contact us and we'll get back to you within 24 hours.</p>
-                    <p><span class="glyphicon glyphicon-map-marker"></span> 2 W Loop Rd, New York, NY 10044</p>
-                    <p><span class="glyphicon glyphicon-envelope"></span> lm769@cornell.edu</p>
-                </div>
-                <div class="col-sm-7 slideanim">
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="map" style="height: 300px;width: 75%; padding: 20px;"></div>
+                        <script>
+                            function initMap() {
+                                var uluru = {lat: 40.756, lng: -73.955};
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 15,
+                                    center: uluru
+                                });
+                                var marker = new google.maps.Marker({
+                                    position: uluru,
+                                    map: map
+                                });
+                            }
+                        </script>
+                        <script async defer
+                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwD5w-Q0R-6wzlLnTy7kKBI0Jwm1u28_I&callback=initMap">
+                        </script>
+                        <h4>Contact us and we'll get back to you within 24 hours.</h4>
+                        <p><span class="glyphicon glyphicon-map-marker"></span> 2 W Loop Rd, New York, NY 10044</p>
+                        <p><span class="glyphicon glyphicon-envelope"></span> lm769@cornell.edu</p>
+                    </div>
+                    <div class="col-md-6 slideanim">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" id="name" name="name" placeholder="Name" type="text"
+                                       required>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" id="email" name="email" placeholder="Email" type="email"
+                                       required>
+                            </div>
                         </div>
-                        <div class="col-sm-6 form-group">
-                            <input class="form-control" id="email" name="email" placeholder="Email" type="email"
-                                   required>
+                        <textarea class="form-control" id="comments" name="comments" placeholder="Comment"
+                                  rows="5"></textarea><br>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <button class="btn btn-default pull-right" type="submit">Send</button>
+                            </div>
                         </div>
                     </div>
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment"
-                              rows="5"></textarea><br>
-                    <div class="row">
-                        <div class="col-sm-12 form-group">
-                            <button class="btn btn-default pull-right" type="submit">Send</button>
-                        </div>
-                    </div>
                 </div>
-            </div>
+            </article>
         </div>
-
 
         <footer class="container-fluid foot-wrap">
             <p align="center" style="margin-top: 20px;color:#878B91;">

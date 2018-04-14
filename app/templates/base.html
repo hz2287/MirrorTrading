@@ -1,12 +1,13 @@
 {% extends "bootstrap/base.html" %} {% block title %}Mirror Trading{% endblock %} {% block head %} {{ super() }}
 
+    <link rel="stylesheet " href="{{ url_for( 'static', filename='css/github-markdown.css' ) }} " type="text/css ">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 
     {% for jsfile_name in script_list %}
         <script src="static/echarts/{{ jsfile_name }}.js"></script> {% endfor %} {% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -17,7 +18,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
+                <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home" id="home-icon"></span></a>
             </div>
 
             <div class="navbar-collapse collapse" id="bs-navbar-collapse">
