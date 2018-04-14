@@ -18,7 +18,7 @@
 
 
         <!-- Container (About&Contact Section) -->
-        <div id="about" class="container-fluid">
+        <div id="info" class="container-fluid">
             <article class="markdown-body">
                 <h2>Who Are We?</h2>
                 <p>We are a social trading platform that aims to democratize money management by effectively
@@ -26,27 +26,9 @@
                 <button class="btn btn-info btn-md">Get in Touch</button>
 
                 <h2>Contact</h2>
-
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="map" style="height: 300px;width: 75%; padding: 20px;"></div>
-                        <script>
-                            function initMap() {
-                                var uluru = {lat: 40.756, lng: -73.955};
-                                var map = new google.maps.Map(document.getElementById('map'), {
-                                    zoom: 15,
-                                    center: uluru
-                                });
-                                var marker = new google.maps.Marker({
-                                    position: uluru,
-                                    map: map
-                                });
-                            }
-                        </script>
-                        <script async defer
-                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwD5w-Q0R-6wzlLnTy7kKBI0Jwm1u28_I&callback=initMap">
-                        </script>
-                        <h4>Contact us and we'll get back to you within 24 hours.</h4>
+                        <p>Contact us and we'll get back to you within 24 hours.</p>
                         <p><span class="glyphicon glyphicon-map-marker"></span> 2 W Loop Rd, New York, NY 10044</p>
                         <p><span class="glyphicon glyphicon-envelope"></span> lm769@cornell.edu</p>
                     </div>
@@ -65,13 +47,33 @@
                                   rows="5"></textarea><br>
                         <div class="row">
                             <div class="col-sm-12 form-group">
-                                <button class="btn btn-default pull-right" type="submit">Send</button>
+                                <button class="btn btn-info pull-right" type="submit">Send</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </article>
         </div>
+
+        <hr>
+        <div class="container" id="map" style="height: 300px;width: 75%;"></div>
+        <script>
+            function initMap() {
+                var uluru = {lat: 40.756, lng: -73.955};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: uluru
+                });
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+            }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwD5w-Q0R-6wzlLnTy7kKBI0Jwm1u28_I&callback=initMap">
+        </script>
+
 
         <footer class="container-fluid foot-wrap">
             <p align="center" style="margin-top: 20px;color:#878B91;">
